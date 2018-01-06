@@ -6,25 +6,25 @@ const demo = require('../lib/demo');
 
 expect.use(require('unexpected-check'));
 
-const { natural, string } = new Generators(42);
+const { natural, text } = new Generators(42);
 
 describe('unexpected-check', () => {
     it('does not find the secret characters', () => {
         expect((text) => {
             demo.findTheSecretCharacters(text);
-        }, 'to be valid for all', string({ length: natural({ max: 50 }) }));
+        }, 'to be valid for all', text);
     });
 
     it('does not find the secret word', () => {
         expect((text) => {
             demo.findTheSecretWord(text);
-        }, 'to be valid for all', string({ length: natural({ max: 50 }) }));
+        }, 'to be valid for all', text);
     });
 
     it('does not find the secret prefix', () => {
         expect((text) => {
             demo.findTheSecretPrefix(text);
-        }, 'to be valid for all', string({ length: natural({ max: 50 }) }));
+        }, 'to be valid for all', text);
     });
 
     it('does not find magic numbers', () => {
