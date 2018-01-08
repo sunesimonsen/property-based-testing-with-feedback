@@ -4,7 +4,7 @@
   "description": "Demo of the unexpected-check instrumentation based property based testing",
   "main": "index.js",
   "scripts": {
-    "test": "UNEXPECTED_CHECK_MAX_ITERATIONS=150000 mocha --require unexpected-check/register",
+    "test": "UNEXPECTED_CHECK_MAX_ITERATIONS=100000 mocha --require unexpected-check/register",
     "test:off": "UNEXPECTED_CHECK_MAX_ITERATIONS=150000 mocha"
   },
   "keywords": [
@@ -13,9 +13,9 @@
   "author": "Sune Simonsen",
   "license": "MIT",
   "devDependencies": {
-    "chance-generators": "2.7.0",
+    "chance-generators": "2.9.0",
     "mocha": "4.0.1",
     "unexpected": "10.36.2",
-    "unexpected-check": "1.16.0"
+    "unexpected-check": "1.17.0"
   }
 }

@@ -6,7 +6,7 @@ const demo = require('../lib/demo');
 
 expect.use(require('unexpected-check'));
 
-const { natural, text } = new Generators(42);
+const { number, text } = new Generators(42);
 
 describe('unexpected-check', () => {
     it('does not find the secret characters', () => {
@@ -28,10 +28,8 @@ describe('unexpected-check', () => {
     });
 
     it('does not find magic numbers', () => {
-        const numbers = natural({ max: 200 });
-
         expect((a, b, c) => {
             demo.findTheMagicNumbers(a, b, c);
-        }, 'to be valid for all', numbers, numbers, numbers);
+        }, 'to be valid for all', number, number, number);
     });
 });
